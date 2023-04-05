@@ -13,18 +13,15 @@ interface ContainerProps{
     type: 'up' | 'down';
     
 }
-//export const Button = styled()``;
 
-export const Container = styled(RectButton)<ContainerProps>`
+export const Container = styled.View<ContainerProps>`
 width: 48%;
-flex-direction: row;
-align-items: center;
 border-radius: 5px;
 border-width: ${({isActive}) => isActive ? 0 : 1.5}px; //verificação pra tirar as borda após o click
 border-style: solid;
 border-color:${({theme}) => theme.colors.text} ;
-padding: 16px;
-justify-content: center;
+
+
 
 ${({ isActive, type}) => isActive && type === 'up' && css`
 background-color: ${({theme}) => theme.colors.success_light};  //condição color após clicar no botton
@@ -35,7 +32,13 @@ background-color: ${({theme}) => theme.colors.attention_light};
 ` };
 `;
 
-export const Button = styled(RectButton)``;
+export const Button = styled(RectButton)`
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 16px;
+`;
+
 
 export const Title = styled.Text`
 font-size: ${RFValue(14)}px;

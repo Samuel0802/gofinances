@@ -1,9 +1,8 @@
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppLoading from 'expo-app-loading';
-import { BorderlessButton} from 'react-native-gesture-handler';
-
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 
 //import a baixo é pra chamar a fonte
@@ -30,11 +29,13 @@ export default function App() {
 
   return (
 
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <AppRoutes />
       </NavigationContainer>
     </ThemeProvider>
+  </GestureHandlerRootView>
   )
 }
 
